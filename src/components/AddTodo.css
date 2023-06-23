@@ -1,0 +1,71 @@
+.addTodo-table,
+.addTodo-th,
+.addTodo-td {
+  border: 1px solid;
+  padding: 5px;
+}
+
+.addTodo-td {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addTodo-table tr {
+  display: flex;
+  justify-content: center;
+}
+
+.addTodo-table {
+  width: 90%;
+}
+
+td {
+  width: 50%;
+}
+
+.addTodo-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.addTodo-submit {
+  width: 50%;
+  text-align: center;
+  height: 30px;
+  border-radius: 30px;
+  margin-top: 8px;
+  background-color: rgb(219, 235, 36);
+}
+.addTodo-submit:hover {
+  background-color: #3cbc8d;
+  color: white;
+}
+
+#addTodoValue {
+  background-color: #3cbc8d;
+  color: white;
+  padding: 16px 20px;
+  border-radius: 40px;
+  width: 100%;
+}
+.addtodo-select {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 40px;
+
+  background-color: #3cbc8d;
+  color: white;
+}
+#inputDate {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 40px;
+
+  background-color: #3cbc8d;
+  color: white;
+}
