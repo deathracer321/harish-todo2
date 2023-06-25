@@ -2,12 +2,19 @@ import React, { useContext } from "react";
 import "./TodoList.css";
 import { MyContext } from "../App";
 
+export const generateRandomColor = () => {
+  const letters = "89ABCDEF"; // Higher range of values for lighter colors
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * letters.length)];
+  }
+  return color;
+};
+
 function TodoList() {
   const { todoList, setTodoList } = useContext(MyContext);
 
-  // const randomColor = () => {
-  //   return `${Math.floor(Math.random() * 16777215).toString(16)}`;
-  // };
+  const randomColor = generateRandomColor();
 
   const deleteTodoHandler = (event) => {
     let newArr = [...todoList];
@@ -38,7 +45,7 @@ function TodoList() {
           return (
             <table className="todoList-table">
               <tbody>
-                <tr>
+                <tr style={{ backgroundColor: generateRandomColor() }}>
                   <th>Task</th>
                   <th>TODO</th>
                   <th>PER/PRO</th>
@@ -48,7 +55,7 @@ function TodoList() {
                 </tr>
                 {todoList?.map((eachTodo, ind) => {
                   return (
-                    <tr key={ind}>
+                    <tr key={ind} style={{ backgroundColor: randomColor }}>
                       <td>{ind + 1}</td>
                       <td>{eachTodo.addTodoValue}</td>
                       <td>{eachTodo.selectedOption}</td>

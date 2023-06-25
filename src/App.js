@@ -2,7 +2,7 @@ import "./App.css";
 import TodoList from "./components/TodoList";
 import AddTodo from "./components/AddTodo";
 import { createContext, useState, useEffect } from "react";
-
+import { generateRandomColor } from "./components/TodoList";
 export const MyContext = createContext();
 
 function App() {
@@ -16,7 +16,6 @@ function App() {
 
   useEffect(() => {
     const storedTodoList = JSON.parse(localStorage.getItem("todoList"));
-    console.log(storedTodoList);
 
     if (storedTodoList) {
       setTodoList(storedTodoList);
@@ -25,10 +24,11 @@ function App() {
 
   return (
     <MyContext.Provider value={{ todoList, setTodoList }}>
-      {console.log(todoList)}
-      <div className="App">
+      <div className="App" style={{ backgroundColor: generateRandomColor() }}>
         <br></br>
+
         <h1>Note your Todo's here...</h1>
+
         <br />
         <hr />
         <AddTodo />

@@ -1,6 +1,8 @@
 .todoList-content {
   border: 1px solid black;
   overflow-x: auto;
+
+  margin-bottom: 20px;
 }
 
 .todoList-table {

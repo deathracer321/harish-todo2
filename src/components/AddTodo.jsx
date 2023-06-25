@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import "./AddTodo.css";
 import { MyContext } from "../App";
+import { generateRandomColor } from "./TodoList";
 
 function AddTodo() {
   const { setTodoList } = useContext(MyContext);
@@ -31,7 +32,10 @@ function AddTodo() {
 
   return (
     <form onSubmit={onSubmitHandler} className="addTodo-form">
-      <table className="addTodo-table">
+      <table
+        className="addTodo-table"
+        style={{ backgroundColor: generateRandomColor() }}
+      >
         <tbody>
           <tr>
             <td className="addTodo-td">
