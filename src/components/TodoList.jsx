@@ -5,14 +5,18 @@ import { MyContext } from "../App";
 function TodoList() {
   const { todoList, setTodoList } = useContext(MyContext);
 
-  const randomColor = () => {
-    return `${Math.floor(Math.random() * 16777215).toString(16)}`;
-  };
+  // const randomColor = () => {
+  //   return `${Math.floor(Math.random() * 16777215).toString(16)}`;
+  // };
 
   const deleteTodoHandler = (event) => {
     let newArr = [...todoList];
     newArr.splice(event.target.value, 1);
     setTodoList(newArr);
+
+    if (!newArr?.length) {
+      localStorage.removeItem("todoList");
+    }
   };
 
   const onChangeHandler = (event, index) => {

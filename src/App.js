@@ -9,7 +9,7 @@ function App() {
   const [todoList, setTodoList] = useState([]);
 
   useEffect(() => {
-    if (todoList?.length) {
+    if (todoList?.length > 0) {
       localStorage.setItem("todoList", JSON.stringify(todoList));
     }
   }, [todoList]);
@@ -17,7 +17,8 @@ function App() {
   useEffect(() => {
     const storedTodoList = JSON.parse(localStorage.getItem("todoList"));
     console.log(storedTodoList);
-    if (storedTodoList?.length) {
+
+    if (storedTodoList) {
       setTodoList(storedTodoList);
     }
   }, []);
